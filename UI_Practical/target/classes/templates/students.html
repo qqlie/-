@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенти</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+            background: #f3f4f6;
+        }
+
+        main {
+            width: min(960px, calc(100% - 32px));
+            margin: 40px auto;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 32px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        th,
+        td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            color: #ffffff;
+            background: #2563eb;
+            font-weight: 700;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tbody tr:hover {
+            background: #eff6ff;
+        }
+
+        .empty {
+            padding: 24px;
+            color: #6b7280;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Список студентів</h1>
+
+    <table th:if="${!students.isEmpty()}">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Email</th>
+            <th>Група</th>
+            <th>Вік</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}">1</td>
+            <td th:text="${student.firstName}">Іван</td>
+            <td th:text="${student.lastName}">Петренко</td>
+            <td th:text="${student.email}">ivan.petrenko@example.com</td>
+            <td th:text="${student.groupName}">КН-21</td>
+            <td th:text="${student.age}">19</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="empty" th:if="${students.isEmpty()}">
+        Студентів ще немає в базі даних.
+    </div>
+</main>
+</body>
+</html>
