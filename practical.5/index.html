@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>АТБ ЄБ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/img4.png" />
+    <link rel="stylesheet" href="script.js" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">📱 АТБ ЄБ</div>
+        <form class="search">
+          <input type="text" placeholder="Пошук.." class="search-bar" />
+          <button type="button" class="search__button">
+            <i class="ri-search-2-line"
+              ><img src="images/img5.png" alt="Search Icon" class="search-icon"
+            /></i>
+          </button>
+        </form>
+        <nav class="navbar">
+          <ul>
+            <li><a class="list-items" href="#top">Home</a></li>
+            <li><a class="list-items" href="about.html">About</a></li>
+            <li><a class="list-items" href="services.html">Services</a></li>
+            <li><a class="list-items" href="team.html">Team</a></li>
+            <li><a class="list-items" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="phones" id="phoneList"></section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="" alt="Телефон" />
+        <p id="modalDescription"></p>
+        <div id="buySection"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 АТБ ЄБ | Створено з ❤️ для вас</p>
+    </footer>
+  </body>
+</html>
